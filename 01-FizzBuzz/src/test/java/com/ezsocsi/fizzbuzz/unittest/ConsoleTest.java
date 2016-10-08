@@ -12,24 +12,34 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class ConsoleTest {
-
-    PrintStream out;
+    Console console;
+    PrintStream printStream;
 
     @Before
     public void setup() {
-        out = mock(PrintStream.class);
-        System.setOut(out);
+        printStream = mock(PrintStream.class);
     }
 
     @Test
     public void console_prints_concatenated_list() {
-        Console console = new Console();
+        console = new Console();
         String separator = ", ";
         List<String> inputList = Arrays.asList("1", "2", "3", "4", "789");
         String expectedOutput = "1, 2, 3, 4, 789";
 
+        System.setOut(printStream);
         console.printlnList(inputList, separator);
 
-        verify(out).println(expectedOutput);
+        verify(printStream).println(expectedOutput);
+    }
+
+    @Test
+    public void console_prints_error_message() {
+        console = new Console();
+
+        System.setErr(printStream);
+        console.printlnError("error message");
+
+        verify(printStream).println("ERROR: error message");
     }
 }
