@@ -1,17 +1,29 @@
 package com.ezsocsi.fizzbuzz;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
+import java.util.Optional;
 
 public class FizzBuzz {
-    public List<String> generateFizzBuzzList(int lowerLimit, int upperLimit) {
-        List<String> fizzBuzzList = new ArrayList<>();
+    private ArgParser argParser;
+    private FizzBuzzGenerator fizzBuzzGenerator;
+    private Console console;
 
-        IntStream.range(lowerLimit, upperLimit + 1)
-                .mapToObj(i -> i % 3 == 0 ? (i % 5 == 0 ? "FizzBuzz" : "Fizz") : (i % 5 == 0 ? "Buzz" : i))
-                .forEach(i -> fizzBuzzList.add(i.toString()));
-
-        return fizzBuzzList;
+    public FizzBuzz(ArgParser argParser, FizzBuzzGenerator fizzBuzzGenerator, Console console) {
+        this.argParser = argParser;
+        this.fizzBuzzGenerator = fizzBuzzGenerator;
+        this.console = console;
     }
+
+    public void fizzBuzz(String... args) {
+        if (argParser.parseArgs(args)) {
+            Optional<Integer> lowerLimit = argParser.getLowerLimit();
+            Optional<Integer> upperLimit = argParser.getUpperLimit();
+            List<String> fizzBuzzOutput = fizzBuzzGenerator.generate(lowerLimit.get(), upperLimit.get());
+
+            console.printlnList(fizzBuzzOutput, ", ");
+        } else {
+            console.printlnError("unable to parse arguments, expected: <int> <int>.");
+        }
+    }
+
 }
