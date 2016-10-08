@@ -1,19 +1,6 @@
 group 'com.ezsocsi.fizzbuzz'
 version '1.0'
 
-apply plugin: 'java'
-
-repositories {
-    mavenCentral()
-}
-
-libsDirName = '../'
-
-dependencies {
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.powermock:powermock-mockito-release-full:1.6.4'
-}
-
 jar {
     manifest {
         attributes 'Implementation-Title': '01-FizzBuzz'
