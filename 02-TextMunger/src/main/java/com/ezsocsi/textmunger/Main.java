@@ -2,9 +2,9 @@ package com.ezsocsi.textmunger;
 
 public class Main {
     public static void main(String[] args) {
-        String text = "This is a complex sentence, isn't it?";
-        Munger munger = new Munger();
+        Utils utils = new Utils();
+        Munger munger = new Munger(utils);
 
-        System.out.println(munger.munge(text));
+        System.out.println(munger.munge("eztkellmungelni"));
     }
 }

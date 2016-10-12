@@ -1,5 +1,6 @@
 package com.ezsocsi.textmunger;
 
+import javax.rmi.CORBA.Util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,6 +8,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Munger {
+
+    Utils utils;
+
+    public Munger(Utils utils) {
+        this.utils = utils;
+    }
+
     private List<String> splitSentenceToWords(String sentence) {
         String[] words = sentence.split("\\b");
 
@@ -16,9 +24,9 @@ public class Munger {
     private String shuffleWord(String word) {
         List<Character> wordAsCharSequence = word.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
 
-        if(wordAsCharSequence.size() > 1) {
-            Collections.shuffle(wordAsCharSequence.subList(1, wordAsCharSequence.size() - 1));
-            return wordAsCharSequence.stream().map(c -> c.toString()).collect(Collectors.joining());
+        if (wordAsCharSequence.size() > 1) {
+            List<Character> shuffledWordAsCharSequence = utils.shuffle(wordAsCharSequence, 1, wordAsCharSequence.size() - 1);
+            return shuffledWordAsCharSequence.stream().map(c -> c.toString()).collect(Collectors.joining());
         }
 
         return word;
