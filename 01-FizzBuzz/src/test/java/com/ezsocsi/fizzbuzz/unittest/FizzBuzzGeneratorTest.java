@@ -1,5 +1,6 @@
 package com.ezsocsi.fizzbuzz.unittest;
 
+
 import com.ezsocsi.fizzbuzz.FizzBuzzGenerator;
 import org.junit.Test;
 

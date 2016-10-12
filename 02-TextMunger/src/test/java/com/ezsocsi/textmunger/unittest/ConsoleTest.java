@@ -1,13 +1,11 @@
-package com.ezsocsi.fizzbuzz.unittest;
+package com.ezsocsi.textmunger.unittest;
 
 
-import com.ezsocsi.fizzbuzz.Console;
+import com.ezsocsi.textmunger.Console;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.PrintStream;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -22,16 +20,13 @@ public class ConsoleTest {
     }
 
     @Test
-    public void console_prints_concatenated_list() {
+    public void console_prints_simple_text() {
         console = new Console();
-        String separator = ", ";
-        List<String> inputList = Arrays.asList("1", "2", "3", "4", "789");
-        String expectedOutput = "1, 2, 3, 4, 789";
 
         System.setOut(printStream);
-        console.printlnList(inputList, separator);
+        console.println("simple text");
 
-        verify(printStream).println(expectedOutput);
+        verify(printStream).println("simple text");
     }
 
     @Test

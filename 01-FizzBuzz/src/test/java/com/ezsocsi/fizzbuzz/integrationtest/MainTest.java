@@ -1,5 +1,6 @@
 package com.ezsocsi.fizzbuzz.integrationtest;
 
+
 import com.ezsocsi.fizzbuzz.Main;
 import org.junit.Before;
 import org.junit.After;

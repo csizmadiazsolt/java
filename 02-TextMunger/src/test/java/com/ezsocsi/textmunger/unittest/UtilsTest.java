@@ -1,5 +1,7 @@
-package com.ezsocsi.textmunger;
+package com.ezsocsi.textmunger.unittest;
 
+
+import com.ezsocsi.textmunger.Utils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,6 +26,6 @@ public class UtilsTest {
 
         utils.shuffle(inputWord, 1, 11);
 
-        verify(collections).shuffle(inputWord.subList(1,11));
+        verify(collections).shuffle(inputWord.subList(1, 11));
     }
 }

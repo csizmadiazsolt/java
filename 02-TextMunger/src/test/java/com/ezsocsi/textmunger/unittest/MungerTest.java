@@ -1,10 +1,12 @@
-package com.ezsocsi.textmunger;
+package com.ezsocsi.textmunger.unittest;
 
+
+import com.ezsocsi.textmunger.Munger;
+import com.ezsocsi.textmunger.Utils;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
