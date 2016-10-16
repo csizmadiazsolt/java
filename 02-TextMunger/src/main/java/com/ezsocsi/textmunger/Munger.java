@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class Munger {
 
-    ListUtility listUtility;
+    private ListUtility listUtility;
 
     public Munger(ListUtility listUtility) {
         this.listUtility = listUtility;
@@ -27,7 +27,7 @@ public class Munger {
 
         if (wordAsCharSequence.size() > 1) {
             List<Character> shuffledWordAsCharSequence = listUtility.shuffle(wordAsCharSequence, 1, wordAsCharSequence.size() - 1);
-            return shuffledWordAsCharSequence.stream().map(c -> c.toString()).collect(Collectors.joining());
+            return shuffledWordAsCharSequence.stream().map(Object::toString).collect(Collectors.joining());
         }
 
         return word;

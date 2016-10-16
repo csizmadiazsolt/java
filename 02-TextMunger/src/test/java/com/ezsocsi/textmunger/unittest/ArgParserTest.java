@@ -16,7 +16,6 @@ import static org.mockito.Mockito.when;
 
 public class ArgParserTest {
     private ArgParser argParser;
-    private ArgUtility argUtility;
 
     private static final int NUMBER_OF_ARGS = 1;
     private final static String[] ARGUMENTS_1 = {"1", "2"};
@@ -24,7 +23,7 @@ public class ArgParserTest {
 
     @Before
     public void setup() {
-        argUtility = mock(ArgUtility.class);
+        ArgUtility argUtility = mock(ArgUtility.class);
         argParser = new ArgParser(argUtility);
 
         when(argUtility.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_1)).thenReturn(false);

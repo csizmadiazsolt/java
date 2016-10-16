@@ -21,9 +21,12 @@ public class FizzBuzz {
         if (argParser.parseArgs(args)) {
             Optional<Integer> lowerLimit = argParser.getLowerLimit();
             Optional<Integer> upperLimit = argParser.getUpperLimit();
-            List<String> fizzBuzzOutput = fizzBuzzGenerator.generate(lowerLimit.get(), upperLimit.get());
 
-            consoleUtility.printlnList(fizzBuzzOutput, ", ");
+            if(lowerLimit.isPresent() && upperLimit.isPresent()) {
+                List<String> fizzBuzzOutput = fizzBuzzGenerator.generate(lowerLimit.get(), upperLimit.get());
+                consoleUtility.printlnList(fizzBuzzOutput, ", ");
+            }
+
         } else {
             consoleUtility.printlnError("unable to parse arguments, expected: <int> <int>.");
         }

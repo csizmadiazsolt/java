@@ -27,8 +27,8 @@ public class FizzBuzzTest {
         fizzBuzzGenerator = mock(FizzBuzzGenerator.class);
         consoleUtility = mock(ConsoleUtility.class);
 
-        Optional<Integer> lowerLimit = Optional.of(Integer.valueOf(4));
-        Optional<Integer> upperLimit = Optional.of(Integer.valueOf(7));
+        Optional<Integer> lowerLimit = Optional.of(4);
+        Optional<Integer> upperLimit = Optional.of(7);
         List<String> generatedList = Arrays.asList("4", "Buzz", "Fizz", "7");
 
         when(argParser.getLowerLimit()).thenReturn(lowerLimit);

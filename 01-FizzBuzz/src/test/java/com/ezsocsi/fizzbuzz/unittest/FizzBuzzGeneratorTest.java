@@ -5,6 +5,7 @@ import com.ezsocsi.fizzbuzz.FizzBuzzGenerator;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -31,7 +32,7 @@ public class FizzBuzzGeneratorTest {
     @Test
     public void fizz_buzz_generator_returns_correct_list_between_5_and_5() {
         FizzBuzzGenerator fizzBuzzGenerator = new FizzBuzzGenerator();
-        List<String> expectedOutput = Arrays.asList("Buzz");
+        List<String> expectedOutput = Collections.singletonList("Buzz");
 
         assertEquals(expectedOutput, fizzBuzzGenerator.generate(5, 5));
     }

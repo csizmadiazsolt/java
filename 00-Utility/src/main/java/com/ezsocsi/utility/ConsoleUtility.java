@@ -22,7 +22,7 @@ public class ConsoleUtility {
     }
 
     private String concatenateList(List<String> list, String separator) {
-        return list.stream().map(i -> i.toString()).collect(Collectors.joining(separator));
+        return list.stream().map(String::toString).collect(Collectors.joining(separator));
     }
 
     public void printError(String errorMessage) {

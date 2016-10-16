@@ -5,10 +5,7 @@ import java.util.Optional;
 
 public class ArgUtility {
     public boolean checkNumberOfArgs(int numberOfExpectedArgs, String... args) {
-        if (args.length == numberOfExpectedArgs) {
-            return true;
-        }
-        return false;
+        return args.length == numberOfExpectedArgs;
     }
 
     public Optional<String> getArgument(int argumentNumber, String... args) {

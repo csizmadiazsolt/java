@@ -14,7 +14,6 @@ import static org.mockito.Mockito.when;
 
 public class TextMungerTest {
     private ArgParser argParser;
-    private Munger munger;
     private ConsoleUtility console;
     private TextMunger textMunger;
 
@@ -25,7 +24,7 @@ public class TextMungerTest {
     @Before
     public void setup() {
         argParser = mock(ArgParser.class);
-        munger = mock(Munger.class);
+        Munger munger = mock(Munger.class);
         console = mock(ConsoleUtility.class);
         textMunger = new TextMunger(munger, console, argParser);
 
