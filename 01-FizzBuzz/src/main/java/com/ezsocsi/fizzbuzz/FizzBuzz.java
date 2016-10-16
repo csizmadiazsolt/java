@@ -1,18 +1,20 @@
 package com.ezsocsi.fizzbuzz;
 
 
+import com.ezsocsi.utility.ConsoleUtility;
+
 import java.util.List;
 import java.util.Optional;
 
 public class FizzBuzz {
     private ArgParser argParser;
     private FizzBuzzGenerator fizzBuzzGenerator;
-    private Console console;
+    private ConsoleUtility consoleUtility;
 
-    public FizzBuzz(ArgParser argParser, FizzBuzzGenerator fizzBuzzGenerator, Console console) {
+    public FizzBuzz(ArgParser argParser, FizzBuzzGenerator fizzBuzzGenerator, ConsoleUtility consoleUtility) {
         this.argParser = argParser;
         this.fizzBuzzGenerator = fizzBuzzGenerator;
-        this.console = console;
+        this.consoleUtility = consoleUtility;
     }
 
     public void fizzBuzz(String... args) {
@@ -21,9 +23,9 @@ public class FizzBuzz {
             Optional<Integer> upperLimit = argParser.getUpperLimit();
             List<String> fizzBuzzOutput = fizzBuzzGenerator.generate(lowerLimit.get(), upperLimit.get());
 
-            console.printlnList(fizzBuzzOutput, ", ");
+            consoleUtility.printlnList(fizzBuzzOutput, ", ");
         } else {
-            console.printlnError("unable to parse arguments, expected: <int> <int>.");
+            consoleUtility.printlnError("unable to parse arguments, expected: <int> <int>.");
         }
     }
 

@@ -1,17 +1,16 @@
-package com.ezsocsi.textmunger.unittest;
+package com.ezsocsi.utility;
 
 
-import com.ezsocsi.textmunger.Utils;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.Collections;
 import java.util.List;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
-public class UtilsTest {
+public class ListUtilityTest {
     private Collections collections;
 
     @Before
@@ -21,11 +20,11 @@ public class UtilsTest {
 
     @Test
     public void munger_returns_correct_munged_sentence() {
-        Utils utils = new Utils();
-        List<Character> inputWord = TestUtils.stringToCharList("sporadically");
+        ListUtility utils = new ListUtility();
+        List<Character> inputWord = TestUtility.stringToCharList("sporadically");
 
         utils.shuffle(inputWord, 1, 11);
 
-        verify(collections).shuffle(inputWord.subList(1, 11));
+        Mockito.verify(collections).shuffle(inputWord.subList(1, 11));
     }
 }

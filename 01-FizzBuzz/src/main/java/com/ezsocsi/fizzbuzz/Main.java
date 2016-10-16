@@ -1,13 +1,19 @@
 package com.ezsocsi.fizzbuzz;
 
 
+import com.ezsocsi.utility.ArgUtility;
+import com.ezsocsi.utility.ConsoleUtility;
+import com.ezsocsi.utility.ConverterUtility;
+
 public class Main {
 
     public static void main(String... args) {
-        ArgParser argParser = new ArgParser();
+        ArgUtility argUtility = new ArgUtility();
+        ConverterUtility converterUtility = new ConverterUtility();
+        ArgParser argParser = new ArgParser(argUtility, converterUtility);
         FizzBuzzGenerator fizzBuzzGenerator = new FizzBuzzGenerator();
-        Console console = new Console();
-        FizzBuzz fizzBuzz = new FizzBuzz(argParser, fizzBuzzGenerator, console);
+        ConsoleUtility consoleUtility = new ConsoleUtility();
+        FizzBuzz fizzBuzz = new FizzBuzz(argParser, fizzBuzzGenerator, consoleUtility);
 
         fizzBuzz.fizzBuzz(args);
     }

@@ -2,31 +2,13 @@ package com.ezsocsi.fizzbuzz.integrationtest;
 
 
 import com.ezsocsi.fizzbuzz.Main;
-import org.junit.Before;
-import org.junit.After;
-import org.junit.Test;
+import com.ezsocsi.utility.IntegrationTestUtility;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class MainTest {
-    private ByteArrayOutputStream stdout = new ByteArrayOutputStream();
-    private ByteArrayOutputStream stderr = new ByteArrayOutputStream();
-
-    @Before
-    public void setup() {
-        System.setOut(new PrintStream(stdout));
-        System.setErr(new PrintStream(stderr));
-    }
-
-    @After
-    public void teardown() {
-        System.setOut(null);
-        System.setErr(null);
-    }
-
+public class MainTest extends IntegrationTestUtility {
     @Test
     public void successful_fizz_buzz_execution() {
         Main.main("4", "7");

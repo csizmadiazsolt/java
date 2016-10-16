@@ -3,33 +3,15 @@ package com.ezsocsi.textmunger.integrationtest;
 
 import com.ezsocsi.textmunger.Main;
 
-import org.junit.After;
-import org.junit.Before;
+import com.ezsocsi.utility.IntegrationTestUtility;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.regex.Pattern;
 
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertEquals;
 
-public class MainTest {
-    private ByteArrayOutputStream stdout = new ByteArrayOutputStream();
-    private ByteArrayOutputStream stderr = new ByteArrayOutputStream();
-
-    @Before
-    public void setup() {
-        System.setOut(new PrintStream(stdout));
-        System.setErr(new PrintStream(stderr));
-    }
-
-    @After
-    public void teardown() {
-        System.setOut(null);
-        System.setErr(null);
-    }
-
+public class MainTest extends IntegrationTestUtility {
     @Test
     public void prints_error_when_no_arguments() {
         Main.main();
@@ -38,7 +20,6 @@ public class MainTest {
         assertEquals("ERROR: unable to parse arguments, expected: <string>." + System.lineSeparator(),
                 stderr.toString());
     }
-
 
     @Test
     public void prints_these_are_a_few_words() {
