@@ -1,4 +1,4 @@
-package com.ezsocsi.textmunger.unittest;
+package com.ezsocsi.textmunger;
 
 
 import com.ezsocsi.textmunger.ArgParser;

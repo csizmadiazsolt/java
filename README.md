@@ -1,2 +1,5 @@
 # java30
-30 Java Exercises
+
+## 00-Utils
+## 01-FizzBuzz
+## 02-TextMunger

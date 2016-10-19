@@ -1,4 +1,4 @@
-package com.ezsocsi.fizzbuzz.unittest;
+package com.ezsocsi.fizzbuzz;
 
 
 import java.util.Arrays;

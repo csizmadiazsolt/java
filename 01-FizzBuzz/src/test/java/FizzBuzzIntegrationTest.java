@@ -1,6 +1,3 @@
-package com.ezsocsi.fizzbuzz.integrationtest;
-
-
 import com.ezsocsi.fizzbuzz.Main;
 import com.ezsocsi.utils.IntegrationTestUtils;
 
@@ -8,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class MainTest extends IntegrationTestUtils {
+public class FizzBuzzIntegrationTest extends IntegrationTestUtils {
     @Test
     public void successful_fizz_buzz_execution() {
         Main.main("4", "7");
