@@ -1,0 +1,9 @@
+group 'com.ezsocsi.utils'
+version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': '00-Utils'
+    }
+    archiveName 'Utils.jar'
+}

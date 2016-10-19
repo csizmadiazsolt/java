@@ -1,9 +1,9 @@
-package com.ezsocsi.utility;
+package com.ezsocsi.utils;
 
 
 import java.util.Optional;
 
-public class ConverterUtility {
+public class ConverterUtils {
     public Optional<Integer> stringToInteger(String input) {
         Optional<Integer> output;
 

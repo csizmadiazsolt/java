@@ -3,7 +3,7 @@ package com.ezsocsi.textmunger.integrationtest;
 
 import com.ezsocsi.textmunger.Main;
 
-import com.ezsocsi.utility.IntegrationTestUtility;
+import com.ezsocsi.utils.IntegrationTestUtils;
 import org.junit.Test;
 
 import java.util.regex.Pattern;
@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertEquals;
 
-public class MainTest extends IntegrationTestUtility {
+public class MainTest extends IntegrationTestUtils {
     @Test
     public void prints_error_when_no_arguments() {
         Main.main();

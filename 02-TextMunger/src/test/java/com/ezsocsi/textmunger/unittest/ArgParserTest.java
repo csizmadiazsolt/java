@@ -2,7 +2,7 @@ package com.ezsocsi.textmunger.unittest;
 
 
 import com.ezsocsi.textmunger.ArgParser;
-import com.ezsocsi.utility.ArgUtility;
+import com.ezsocsi.utils.ArgUtils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,13 +23,13 @@ public class ArgParserTest {
 
     @Before
     public void setup() {
-        ArgUtility argUtility = mock(ArgUtility.class);
-        argParser = new ArgParser(argUtility);
+        ArgUtils argUtils = mock(ArgUtils.class);
+        argParser = new ArgParser(argUtils);
 
-        when(argUtility.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_1)).thenReturn(false);
-        when(argUtility.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_2)).thenReturn(true);
+        when(argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_1)).thenReturn(false);
+        when(argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_2)).thenReturn(true);
 
-        when(argUtility.getArgument(0, ARGUMENTS_2)).thenReturn(Optional.of("This a valid argument."));
+        when(argUtils.getArgument(0, ARGUMENTS_2)).thenReturn(Optional.of("This a valid argument."));
     }
 
     @Test

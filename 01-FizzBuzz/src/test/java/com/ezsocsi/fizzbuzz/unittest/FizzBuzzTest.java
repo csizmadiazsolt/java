@@ -8,7 +8,7 @@ import java.util.Optional;
 import com.ezsocsi.fizzbuzz.ArgParser;
 import com.ezsocsi.fizzbuzz.FizzBuzz;
 import com.ezsocsi.fizzbuzz.FizzBuzzGenerator;
-import com.ezsocsi.utility.ConsoleUtility;
+import com.ezsocsi.utils.ConsoleUtils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,13 +19,13 @@ import static org.mockito.Mockito.when;
 public class FizzBuzzTest {
     private ArgParser argParser;
     private FizzBuzzGenerator fizzBuzzGenerator;
-    private ConsoleUtility consoleUtility;
+    private ConsoleUtils consoleUtils;
 
     @Before
     public void setup() {
         argParser = mock(ArgParser.class);
         fizzBuzzGenerator = mock(FizzBuzzGenerator.class);
-        consoleUtility = mock(ConsoleUtility.class);
+        consoleUtils = mock(ConsoleUtils.class);
 
         Optional<Integer> lowerLimit = Optional.of(4);
         Optional<Integer> upperLimit = Optional.of(7);
@@ -38,22 +38,22 @@ public class FizzBuzzTest {
 
     @Test
     public void returns_correct_fizz_buzz_list() {
-        FizzBuzz fizzBuzz = new FizzBuzz(argParser, fizzBuzzGenerator, consoleUtility);
+        FizzBuzz fizzBuzz = new FizzBuzz(argParser, fizzBuzzGenerator, consoleUtils);
         List<String> generatedList = Arrays.asList("4", "Buzz", "Fizz", "7");
         when(argParser.parseArgs("4", "7")).thenReturn(true);
 
         fizzBuzz.fizzBuzz("4", "7");
 
-        verify(consoleUtility).printlnList(generatedList, ", ");
+        verify(consoleUtils).printlnList(generatedList, ", ");
     }
 
     @Test
     public void returns_argument_parse_error() {
-        FizzBuzz fizzBuzz = new FizzBuzz(argParser, fizzBuzzGenerator, consoleUtility);
+        FizzBuzz fizzBuzz = new FizzBuzz(argParser, fizzBuzzGenerator, consoleUtils);
         when(argParser.parseArgs("4", "7")).thenReturn(false);
 
         fizzBuzz.fizzBuzz("4", "7");
 
-        verify(consoleUtility).printlnError("unable to parse arguments, expected: <int> <int>.");
+        verify(consoleUtils).printlnError("unable to parse arguments, expected: <int> <int>.");
     }
 }

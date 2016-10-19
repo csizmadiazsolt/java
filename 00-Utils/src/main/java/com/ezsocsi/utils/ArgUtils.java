@@ -1,9 +1,9 @@
-package com.ezsocsi.utility;
+package com.ezsocsi.utils;
 
 
 import java.util.Optional;
 
-public class ArgUtility {
+public class ArgUtils {
     public boolean checkNumberOfArgs(int numberOfExpectedArgs, String... args) {
         return args.length == numberOfExpectedArgs;
     }

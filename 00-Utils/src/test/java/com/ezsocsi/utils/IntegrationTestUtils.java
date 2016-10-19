@@ -1,4 +1,4 @@
-package com.ezsocsi.utility;
+package com.ezsocsi.utils;
 
 
 import org.junit.After;
@@ -7,7 +7,7 @@ import org.junit.Before;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-public class IntegrationTestUtility {
+public class IntegrationTestUtils {
     protected ByteArrayOutputStream stdout = new ByteArrayOutputStream();
     protected ByteArrayOutputStream stderr = new ByteArrayOutputStream();
 

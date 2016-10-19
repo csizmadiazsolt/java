@@ -1,10 +1,10 @@
-package com.ezsocsi.utility;
+package com.ezsocsi.utils;
 
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ConsoleUtility {
+public class ConsoleUtils {
     public void print(String text) {
         System.out.print(text);
     }
@@ -22,7 +22,7 @@ public class ConsoleUtility {
     }
 
     private String concatenateList(List<String> list, String separator) {
-        return list.stream().map(String::toString).collect(Collectors.joining(separator));
+        return list.stream().collect(Collectors.joining(separator));
     }
 
     public void printError(String errorMessage) {

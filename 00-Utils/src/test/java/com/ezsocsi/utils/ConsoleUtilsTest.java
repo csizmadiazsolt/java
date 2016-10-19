@@ -1,4 +1,4 @@
-package com.ezsocsi.utility;
+package com.ezsocsi.utils;
 
 
 import org.junit.Before;
@@ -11,20 +11,20 @@ import java.util.List;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class ConsoleUtilityTest {
-    private ConsoleUtility consoleUtility;
+public class ConsoleUtilsTest {
+    private ConsoleUtils consoleUtils;
     private PrintStream printStream;
 
     @Before
     public void setup() {
         printStream = mock(PrintStream.class);
-        consoleUtility = new ConsoleUtility();
+        consoleUtils = new ConsoleUtils();
     }
 
     @Test
     public void console_print_text() {
         System.setOut(printStream);
-        consoleUtility.print("some text to the output");
+        consoleUtils.print("some text to the output");
 
         verify(printStream).print("some text to the output");
     }
@@ -32,7 +32,7 @@ public class ConsoleUtilityTest {
     @Test
     public void console_println_text() {
         System.setOut(printStream);
-        consoleUtility.println("some text to the output");
+        consoleUtils.println("some text to the output");
 
         verify(printStream).println("some text to the output");
     }
@@ -44,7 +44,7 @@ public class ConsoleUtilityTest {
         String expectedOutput = "1, 2, 3, 4, 789";
 
         System.setOut(printStream);
-        consoleUtility.printList(inputList, separator);
+        consoleUtils.printList(inputList, separator);
 
         verify(printStream).print(expectedOutput);
     }
@@ -56,7 +56,7 @@ public class ConsoleUtilityTest {
         String expectedOutput = "1, 2, 3, 4, 789";
 
         System.setOut(printStream);
-        consoleUtility.printlnList(inputList, separator);
+        consoleUtils.printlnList(inputList, separator);
 
         verify(printStream).println(expectedOutput);
     }
@@ -64,7 +64,7 @@ public class ConsoleUtilityTest {
     @Test
     public void console_print_error_message() {
         System.setErr(printStream);
-        consoleUtility.printError("error message");
+        consoleUtils.printError("error message");
 
         verify(printStream).print("ERROR: error message");
     }
@@ -72,7 +72,7 @@ public class ConsoleUtilityTest {
     @Test
     public void console_println_error_message() {
         System.setErr(printStream);
-        consoleUtility.printlnError("error message");
+        consoleUtils.printlnError("error message");
 
         verify(printStream).println("ERROR: error message");
     }

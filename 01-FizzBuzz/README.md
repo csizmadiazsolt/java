@@ -2,7 +2,7 @@
 
 ## Usage
 ```
-$ java -jar 01-FizzBuzz-1.0.jar 4 7
+$ java -jar FizzBuzz.jar 4 7
 ```
 ## How to build
 To build and execute checks use the following command

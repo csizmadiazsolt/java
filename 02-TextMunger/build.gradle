@@ -6,4 +6,5 @@ jar {
         attributes 'Implementation-Title': '02-TextMunger'
         attributes 'Main-Class': 'com.ezsocsi.textmunger.Main'
     }
+    archiveName 'TextMunger.jar'
 }

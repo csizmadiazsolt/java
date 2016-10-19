@@ -2,8 +2,8 @@ package com.ezsocsi.fizzbuzz.unittest;
 
 
 import com.ezsocsi.fizzbuzz.ArgParser;
-import com.ezsocsi.utility.ArgUtility;
-import com.ezsocsi.utility.ConverterUtility;
+import com.ezsocsi.utils.ArgUtils;
+import com.ezsocsi.utils.ConverterUtils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,8 +17,8 @@ import static org.powermock.api.mockito.PowerMockito.when;
 
 public class ArgParserTest {
     private ArgParser argParser;
-    private ArgUtility argUtility;
-    private ConverterUtility converterUtility;
+    private ArgUtils argUtils;
+    private ConverterUtils converterUtils;
 
     private static final int NUMBER_OF_ARGS = 2;
     private final static String[] ARGUMENTS_1 = {"1", "2", "3"};
@@ -28,24 +28,24 @@ public class ArgParserTest {
 
     @Before
     public void setup() {
-        argUtility = mock(ArgUtility.class);
-        converterUtility = mock(ConverterUtility.class);
-        argParser = new ArgParser(argUtility, converterUtility);
+        argUtils = mock(ArgUtils.class);
+        converterUtils = mock(ConverterUtils.class);
+        argParser = new ArgParser(argUtils, converterUtils);
 
-        when(argUtility.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_1)).thenReturn(false);
-        when(argUtility.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_2)).thenReturn(true);
-        when(argUtility.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_3)).thenReturn(true);
+        when(argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_1)).thenReturn(false);
+        when(argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_2)).thenReturn(true);
+        when(argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_3)).thenReturn(true);
 
-        when(argUtility.getArgument(0, ARGUMENTS_2)).thenReturn(Optional.of("Not a number"));
-        when(argUtility.getArgument(1, ARGUMENTS_2)).thenReturn(Optional.of("2"));
+        when(argUtils.getArgument(0, ARGUMENTS_2)).thenReturn(Optional.of("Not a number"));
+        when(argUtils.getArgument(1, ARGUMENTS_2)).thenReturn(Optional.of("2"));
 
-        when(argUtility.getArgument(0, ARGUMENTS_3)).thenReturn(Optional.of("4"));
-        when(argUtility.getArgument(1, ARGUMENTS_3)).thenReturn(Optional.of("7"));
+        when(argUtils.getArgument(0, ARGUMENTS_3)).thenReturn(Optional.of("4"));
+        when(argUtils.getArgument(1, ARGUMENTS_3)).thenReturn(Optional.of("7"));
 
-        when(converterUtility.stringToInteger("Not a number")).thenReturn(Optional.empty());
-        when(converterUtility.stringToInteger("2")).thenReturn(Optional.of(2));
-        when(converterUtility.stringToInteger("4")).thenReturn(Optional.of(4));
-        when(converterUtility.stringToInteger("7")).thenReturn(Optional.of(7));
+        when(converterUtils.stringToInteger("Not a number")).thenReturn(Optional.empty());
+        when(converterUtils.stringToInteger("2")).thenReturn(Optional.of(2));
+        when(converterUtils.stringToInteger("4")).thenReturn(Optional.of(4));
+        when(converterUtils.stringToInteger("7")).thenReturn(Optional.of(7));
     }
 
     @Test

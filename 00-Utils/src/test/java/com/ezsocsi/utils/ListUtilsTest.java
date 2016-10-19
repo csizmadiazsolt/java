@@ -1,4 +1,4 @@
-package com.ezsocsi.utility;
+package com.ezsocsi.utils;
 
 
 import org.junit.Before;
@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.mock;
 
-public class ListUtilityTest {
+public class ListUtilsTest {
     private Collections collections;
 
     @Before
@@ -20,8 +20,8 @@ public class ListUtilityTest {
 
     @Test
     public void munger_returns_correct_munged_sentence() {
-        ListUtility utils = new ListUtility();
-        List<Character> inputWord = TestUtility.stringToCharList("sporadically");
+        ListUtils utils = new ListUtils();
+        List<Character> inputWord = TestUtils.stringToCharList("sporadically");
 
         utils.shuffle(inputWord, 1, 11);
 

@@ -1,18 +1,18 @@
 package com.ezsocsi.textmunger;
 
 
-import com.ezsocsi.utility.ArgUtility;
-import com.ezsocsi.utility.ConsoleUtility;
-import com.ezsocsi.utility.ListUtility;
+import com.ezsocsi.utils.ArgUtils;
+import com.ezsocsi.utils.ConsoleUtils;
+import com.ezsocsi.utils.ListUtils;
 
 public class Main {
     public static void main(String... args) {
-        ListUtility listUtility = new ListUtility();
-        Munger munger = new Munger(listUtility);
-        ConsoleUtility consoleUtility = new ConsoleUtility();
-        ArgUtility argUtility = new ArgUtility();
-        ArgParser argParser = new ArgParser(argUtility);
-        TextMunger textMunger = new TextMunger(munger, consoleUtility, argParser);
+        ListUtils listUtils = new ListUtils();
+        Munger munger = new Munger(listUtils);
+        ConsoleUtils consoleUtils = new ConsoleUtils();
+        ArgUtils argUtils = new ArgUtils();
+        ArgParser argParser = new ArgParser(argUtils);
+        TextMunger textMunger = new TextMunger(munger, consoleUtils, argParser);
 
         textMunger.mungeText(args);
     }

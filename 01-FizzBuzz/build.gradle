@@ -6,4 +6,5 @@ jar {
         attributes 'Implementation-Title': '01-FizzBuzz'
         attributes 'Main-Class': 'com.ezsocsi.fizzbuzz.Main'
     }
+    archiveName 'FizzBuzz.jar'
 }

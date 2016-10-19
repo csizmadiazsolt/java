@@ -15,14 +15,14 @@ subprojects {
 
 project(':01-FizzBuzz') {
   dependencies {
-    compile project(':00-Utility')
-    testCompile project(':00-Utility').sourceSets.test.output
+    compile project(':00-Utils')
+    testCompile project(':00-Utils').sourceSets.test.output
   }
 }
 
 project(':02-TextMunger') {
   dependencies {
-    compile project(':00-Utility')
-    testCompile project(':00-Utility').sourceSets.test.output
+    compile project(':00-Utils')
+    testCompile project(':00-Utils').sourceSets.test.output
   }
 }

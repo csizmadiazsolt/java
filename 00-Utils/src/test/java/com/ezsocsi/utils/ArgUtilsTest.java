@@ -1,4 +1,4 @@
-package com.ezsocsi.utility;
+package com.ezsocsi.utils;
 
 
 import org.junit.Before;
@@ -10,12 +10,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ArgUtilityTest {
-    private ArgUtility argUtility;
+public class ArgUtilsTest {
+    private ArgUtils argUtils;
 
     @Before
     public void setup() {
-        argUtility = new ArgUtility();
+        argUtils = new ArgUtils();
     }
 
     @Test
@@ -23,7 +23,7 @@ public class ArgUtilityTest {
         String[] arguments = {"1", "2"};
         int expectedNumberOfArguments = 2;
 
-        assertTrue(argUtility.checkNumberOfArgs(expectedNumberOfArguments, arguments));
+        assertTrue(argUtils.checkNumberOfArgs(expectedNumberOfArguments, arguments));
     }
 
     @Test
@@ -31,7 +31,7 @@ public class ArgUtilityTest {
         String[] arguments = {"1", "2"};
         int expectedNumberOfArguments = 1;
 
-        assertFalse(argUtility.checkNumberOfArgs(expectedNumberOfArguments, arguments));
+        assertFalse(argUtils.checkNumberOfArgs(expectedNumberOfArguments, arguments));
     }
 
     @Test
@@ -39,7 +39,7 @@ public class ArgUtilityTest {
         String[] arguments = {"apfel", "schadlingbekampfungsmittel"};
         Optional<String> expectedArgument = Optional.of("schadlingbekampfungsmittel");
 
-        assertEquals(expectedArgument, argUtility.getArgument(1, arguments));
+        assertEquals(expectedArgument, argUtils.getArgument(1, arguments));
     }
 
     @Test
@@ -47,6 +47,6 @@ public class ArgUtilityTest {
         String[] arguments = {"schadlingbekampfungsmittel"};
         Optional<String> expectedArgument = Optional.empty();
 
-        assertEquals(expectedArgument, argUtility.getArgument(2, arguments));
+        assertEquals(expectedArgument, argUtils.getArgument(2, arguments));
     }
 }

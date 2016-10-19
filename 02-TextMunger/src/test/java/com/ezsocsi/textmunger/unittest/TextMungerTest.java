@@ -4,7 +4,7 @@ package com.ezsocsi.textmunger.unittest;
 import com.ezsocsi.textmunger.ArgParser;
 import com.ezsocsi.textmunger.Munger;
 import com.ezsocsi.textmunger.TextMunger;
-import com.ezsocsi.utility.ConsoleUtility;
+import com.ezsocsi.utils.ConsoleUtils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ import static org.mockito.Mockito.when;
 
 public class TextMungerTest {
     private ArgParser argParser;
-    private ConsoleUtility console;
+    private ConsoleUtils console;
     private TextMunger textMunger;
 
     private static final String INPUT_TEXT = "some text for example";
@@ -25,7 +25,7 @@ public class TextMungerTest {
     public void setup() {
         argParser = mock(ArgParser.class);
         Munger munger = mock(Munger.class);
-        console = mock(ConsoleUtility.class);
+        console = mock(ConsoleUtils.class);
         textMunger = new TextMunger(munger, console, argParser);
 
         when(argParser.getInputText()).thenReturn(INPUT_TEXT);

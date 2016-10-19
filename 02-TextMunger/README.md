@@ -2,7 +2,7 @@
 
 ## Usage
 ```
-$ java -jar 02-TextMunger-1.0.jar "some text for example"
+$ java -jar TextMunger.jar "some text for example"
 ```
 ## How to build
 To build and execute checks use the following command

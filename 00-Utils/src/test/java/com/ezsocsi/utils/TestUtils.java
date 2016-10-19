@@ -1,9 +1,9 @@
-package com.ezsocsi.utility;
+package com.ezsocsi.utils;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class TestUtility {
+public class TestUtils {
     public static List<Character> stringToCharList(String text) {
         return text.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
     }

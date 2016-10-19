@@ -1,16 +1,16 @@
 package com.ezsocsi.textmunger;
 
 
-import com.ezsocsi.utility.ConsoleUtility;
+import com.ezsocsi.utils.ConsoleUtils;
 
 public class TextMunger {
-    private Munger munger;
-    private ConsoleUtility consoleUtility;
-    private ArgParser argParser;
+    private final Munger munger;
+    private final ConsoleUtils consoleUtils;
+    private final ArgParser argParser;
 
-    public TextMunger(Munger munger, ConsoleUtility consoleUtility, ArgParser argParser) {
+    public TextMunger(Munger munger, ConsoleUtils consoleUtils, ArgParser argParser) {
         this.munger = munger;
-        this.consoleUtility = consoleUtility;
+        this.consoleUtils = consoleUtils;
         this.argParser = argParser;
     }
 
@@ -18,9 +18,9 @@ public class TextMunger {
         if (argParser.parseArgs(args)) {
             String textToMunge = argParser.getInputText();
 
-            consoleUtility.println(munger.munge(textToMunge));
+            consoleUtils.println(munger.munge(textToMunge));
         } else {
-            consoleUtility.printlnError("unable to parse arguments, expected: <string>.");
+            consoleUtils.printlnError("unable to parse arguments, expected: <string>.");
         }
     }
 }
