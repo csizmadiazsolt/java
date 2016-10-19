@@ -1,0 +1,10 @@
+group 'com.ezsocsi.textmunger'
+version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': '02-TextMunger'
+        attributes 'Main-Class': 'com.ezsocsi.textmunger.Main'
+    }
+    archiveName 'TextMunger.jar'
+}

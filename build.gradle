@@ -1,0 +1,28 @@
+subprojects {
+  apply plugin: "java"
+
+  repositories {
+    mavenCentral()
+  }
+
+  libsDirName = '../'
+
+  dependencies {
+	testCompile 'junit:junit:4.12'
+	testCompile 'org.powermock:powermock-mockito-release-full:1.6.4'
+  }
+}
+
+project(':01-FizzBuzz') {
+  dependencies {
+    compile project(':00-Utils')
+    testCompile project(':00-Utils').sourceSets.test.output
+  }
+}
+
+project(':02-TextMunger') {
+  dependencies {
+    compile project(':00-Utils')
+    testCompile project(':00-Utils').sourceSets.test.output
+  }
+}
