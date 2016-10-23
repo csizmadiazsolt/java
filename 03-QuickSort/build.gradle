@@ -1,0 +1,10 @@
+group 'com.ezsocsi.quicksort'
+version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': '03-QuickSort'
+        attributes 'Main-Class': 'com.ezsocsi.quicksort.Main'
+    }
+    archiveName 'QuickSort.jar'
+}
