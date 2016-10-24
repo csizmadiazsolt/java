@@ -4,6 +4,8 @@ package com.ezsocsi.utils;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
@@ -48,5 +50,19 @@ public class ArgUtilsTest {
         Optional<String> expectedArgument = Optional.empty();
 
         assertEquals(expectedArgument, argUtils.getArgument(2, arguments));
+    }
+
+    @Test
+    public void successful_string_split_to_list() {
+        List<String> expected = Arrays.asList("42", "56", "12");
+
+        assertEquals(expected, argUtils.splitArgToList("42 56 12", " "));
+    }
+
+    @Test
+    public void unsuccessful_string_split_to_list() {
+        List<String> expected = Arrays.asList("426712");
+
+        assertEquals(expected, argUtils.splitArgToList("426712", " "));
     }
 }

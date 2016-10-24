@@ -12,7 +12,6 @@ public class ArgParser {
 
     public ArgParser(ArgUtils argUtils) {
         this.argUtils = argUtils;
-
     }
 
     public boolean parseArgs(String... args) {
@@ -29,6 +28,6 @@ public class ArgParser {
     }
 
     public String getInputText() {
-        return inputText;
+        return this.inputText;
     }
 }

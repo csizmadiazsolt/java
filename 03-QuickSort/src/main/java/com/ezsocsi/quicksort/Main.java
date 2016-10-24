@@ -1,21 +1,19 @@
 package com.ezsocsi.quicksort;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import java.util.List;
+import com.ezsocsi.utils.ArgUtils;
+import com.ezsocsi.utils.ConsoleUtils;
+import com.ezsocsi.utils.ConverterUtils;
 
 public class Main {
-
     public static void main(String... args) {
-        List<Integer> myList = new ArrayList<>(Arrays.asList(3, 7, 8, 5, 2, 1, 9, 5, 4));
-        QuickSort alma = new QuickSort();
+        QuickSort quickSort = new QuickSort();
+        ConsoleUtils consoleUtils = new ConsoleUtils();
+        ConverterUtils converterUtils = new ConverterUtils();
+        ArgUtils argUtils = new ArgUtils();
+        ArgParser argParser = new ArgParser(argUtils, converterUtils);
+        QuickSorter quickSorter = new QuickSorter(quickSort, consoleUtils, argParser);
 
-        alma.quickSort(myList);
-
-        System.out.println(myList);
+        quickSorter.sort(args);
     }
-
-
 }

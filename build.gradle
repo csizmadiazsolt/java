@@ -26,3 +26,10 @@ project(':02-TextMunger') {
     testCompile project(':00-Utils').sourceSets.test.output
   }
 }
+
+project(':03-QuickSort') {
+  dependencies {
+    compile project(':00-Utils')
+    testCompile project(':00-Utils').sourceSets.test.output
+  }
+}

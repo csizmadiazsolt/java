@@ -37,10 +37,10 @@ public class ArgParser {
     }
 
     public Optional<Integer> getLowerLimit() {
-        return lowerLimit;
+        return this.lowerLimit;
     }
 
     public Optional<Integer> getUpperLimit() {
-        return upperLimit;
+        return this.upperLimit;
     }
 }

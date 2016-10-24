@@ -4,30 +4,35 @@ package com.ezsocsi.quicksort;
 import java.util.Collections;
 import java.util.List;
 
-public class QuickSort {
-    public void quickSort(List<Integer> list) {
-        quickSort(list, 0, list.size()-1);
+class QuickSort {
+    void quickSort(List<Integer> list) {
+        quickSort(list, 0, list.size() - 1);
     }
 
-    private void quickSort(List<Integer> list, int low, int high) {
-        if (low < high) {
-            int p = partition(list, low, high);
-            quickSort(list, low, p - 1);
-            quickSort(list, p + 1, high);
+    private void quickSort(List<Integer> listToSort, int lowerLimit, int upperLimit) {
+        int pivot;
+
+        if (lowerLimit < upperLimit) {
+            pivot = partition(listToSort, lowerLimit, upperLimit);
+            quickSort(listToSort, lowerLimit, pivot - 1);
+            quickSort(listToSort, pivot + 1, upperLimit);
         }
     }
 
-    private int partition(List<Integer> list, int low, int high) {
-        int pivot = list.get(high);
-        Integer i = low;
+    private int partition(List<Integer> listToSort, int lowerLimit, int upperLimit) {
+        int pivot = listToSort.get(upperLimit);
+        int i = lowerLimit;
+        int j = lowerLimit;
 
-        for (int j = low; j < high; j++) {
-            if (list.get(j) < pivot) {
-                Collections.swap(list, i, j);
+        for (Integer element : listToSort.subList(lowerLimit, upperLimit)) {
+            if (element < pivot) {
+                Collections.swap(listToSort, i, j);
                 i++;
             }
+            j++;
         }
-        Collections.swap(list, i, high);
+
+        Collections.swap(listToSort, i, upperLimit);
 
         return i;
     }
