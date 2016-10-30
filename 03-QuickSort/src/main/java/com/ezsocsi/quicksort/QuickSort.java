@@ -1,12 +1,21 @@
 package com.ezsocsi.quicksort;
 
 
-import java.util.Collections;
+import com.ezsocsi.utils.ListUtils;
+
 import java.util.List;
 
 class QuickSort {
-    void quickSort(List<Integer> list) {
+    private ListUtils listUtils;
+
+    QuickSort(ListUtils listUtils) {
+        this.listUtils = listUtils;
+    }
+
+    List<Integer> quickSort(List<Integer> list) {
         quickSort(list, 0, list.size() - 1);
+
+        return list;
     }
 
     private void quickSort(List<Integer> listToSort, int lowerLimit, int upperLimit) {
@@ -26,13 +35,13 @@ class QuickSort {
 
         for (Integer element : listToSort.subList(lowerLimit, upperLimit)) {
             if (element < pivot) {
-                Collections.swap(listToSort, i, j);
+                listUtils.swap(listToSort, i, j);
                 i++;
             }
             j++;
         }
 
-        Collections.swap(listToSort, i, upperLimit);
+        listUtils.swap(listToSort, i, upperLimit);
 
         return i;
     }

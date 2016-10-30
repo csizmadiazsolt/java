@@ -17,12 +17,12 @@ public class ConsoleUtils {
         System.out.print(concatenateList(list, separator));
     }
 
-    public void printlnList(List<String> list, String separator) {
+    public void printlnList(List<?> list, String separator) {
         System.out.println(concatenateList(list, separator));
     }
 
-    private String concatenateList(List<String> list, String separator) {
-        return list.stream().collect(Collectors.joining(separator));
+    private String concatenateList(List<?> list, String separator) {
+        return list.stream().map(Object::toString).collect(Collectors.joining(separator));
     }
 
     public void printError(String errorMessage) {

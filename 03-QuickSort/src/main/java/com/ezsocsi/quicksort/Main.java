@@ -4,10 +4,12 @@ package com.ezsocsi.quicksort;
 import com.ezsocsi.utils.ArgUtils;
 import com.ezsocsi.utils.ConsoleUtils;
 import com.ezsocsi.utils.ConverterUtils;
+import com.ezsocsi.utils.ListUtils;
 
 public class Main {
     public static void main(String... args) {
-        QuickSort quickSort = new QuickSort();
+        ListUtils listUtils = new ListUtils();
+        QuickSort quickSort = new QuickSort(listUtils);
         ConsoleUtils consoleUtils = new ConsoleUtils();
         ConverterUtils converterUtils = new ConverterUtils();
         ArgUtils argUtils = new ArgUtils();

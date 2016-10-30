@@ -20,9 +20,9 @@ class QuickSorter {
         if (argParser.parseArgs(args)) {
             List<Integer> listToSort = argParser.getInputList();
 
-            quickSort.quickSort(listToSort);
+            List<Integer> sortedList = quickSort.quickSort(listToSort);
 
-            consoleUtils.println(listToSort.toString());
+            consoleUtils.printlnList(sortedList, " ");
         } else {
             consoleUtils.printlnError("unable to parse arguments, expected: \"<num> <num> <num> ...\".");
         }
