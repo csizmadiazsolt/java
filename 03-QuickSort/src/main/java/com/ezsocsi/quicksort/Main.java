@@ -10,7 +10,7 @@ public class Main {
     public static void main(String... args) {
         ListUtils listUtils = new ListUtils();
         QuickSort quickSort = new QuickSort(listUtils);
-        ConsoleUtils consoleUtils = new ConsoleUtils();
+        ConsoleUtils consoleUtils = new ConsoleUtils(listUtils);
         ConverterUtils converterUtils = new ConverterUtils();
         ArgUtils argUtils = new ArgUtils();
         ArgParser argParser = new ArgParser(argUtils, converterUtils);

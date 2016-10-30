@@ -5,29 +5,45 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class ListUtilsTest {
-    private Collections collections;
     private ListUtils listUtils;
 
     @Before
     public void setup() {
         listUtils = new ListUtils();
-        collections = mock(Collections.class);
     }
 
     @Test
-    public void munger_returns_correct_munged_sentence() {
-        List<Character> inputWord = TestUtils.stringToCharList("sporadically");
+    public void verify_correct_shuffle_behaviour() {
+        List<Character> inputWord = TestUtils.stringToCharList("bronx");
 
-        listUtils.shuffle(inputWord, 1, 11);
+        listUtils.shuffle(inputWord, 1, 3);
 
-        verify(collections).shuffle(inputWord.subList(1, 11));
+        int letterCounter = inputWord.indexOf('b') + inputWord.indexOf('r')
+                + inputWord.indexOf('o') + inputWord.indexOf('n') + inputWord.indexOf('x');
+
+        assertEquals(10, letterCounter);
+    }
+
+    @Test
+    public void verify_correct_swap_behaviour() {
+        List<Integer> input = Arrays.asList(1, 2, 3);
+        List<Integer> expected = Arrays.asList(3, 2, 1);
+
+        listUtils.swap(input, 0, 2);
+
+        assertEquals(expected, input);
+    }
+
+    @Test
+    public void returns_valid_concatenated_text() {
+        List<String> input = Arrays.asList("this", "has", "to", "be", "Concatenated");
+        String expected = "this has to be Concatenated";
+
+        assertEquals(expected, listUtils.concatenateList(input, " "));
     }
 }

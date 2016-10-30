@@ -20,9 +20,9 @@ public class ConverterUtils {
 
     public List<Integer> stringListToIntegerList(List<String> input) {
         return input.stream()
-                .map(e -> stringToInteger(e))
-                .filter(e -> e.isPresent())
-                .map(e -> e.get())
+                .map(this::stringToInteger)
+                .filter(Optional::isPresent)
+                .map(Optional::get)
                 .collect(Collectors.toList());
     }
 }

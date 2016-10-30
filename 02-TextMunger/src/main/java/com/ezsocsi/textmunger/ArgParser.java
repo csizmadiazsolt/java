@@ -10,11 +10,11 @@ public class ArgParser {
     private static final int NUMBER_OF_ARGS = 1;
     private String inputText;
 
-    public ArgParser(ArgUtils argUtils) {
+    ArgParser(ArgUtils argUtils) {
         this.argUtils = argUtils;
     }
 
-    public boolean parseArgs(String... args) {
+    boolean parseArgs(String... args) {
         if (argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, args)) {
             Optional<String> inputText = argUtils.getArgument(0, args);
 
@@ -27,7 +27,7 @@ public class ArgParser {
         return false;
     }
 
-    public String getInputText() {
+    String getInputText() {
         return this.inputText;
     }
 }

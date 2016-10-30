@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,7 +62,7 @@ public class ArgUtilsTest {
 
     @Test
     public void unsuccessful_string_split_to_list() {
-        List<String> expected = Arrays.asList("426712");
+        List<String> expected = Collections.singletonList("426712");
 
         assertEquals(expected, argUtils.splitArgToList("426712", " "));
     }

@@ -1,7 +1,6 @@
 package com.ezsocsi.textmunger;
 
 
-import com.ezsocsi.textmunger.Munger;
 import com.ezsocsi.utils.ListUtils;
 import com.ezsocsi.utils.TestUtils;
 import org.junit.Before;
@@ -10,11 +9,9 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class MungerTest {
-    private ListUtils listUtils;
     private Munger munger;
 
     private final List<Character> WORD_FRAGMENTATION = TestUtils.stringToCharList("fragmentation");
@@ -30,15 +27,15 @@ public class MungerTest {
 
     @Before
     public void setup() {
-        listUtils = mock(ListUtils.class);
+        ListUtils listUtils = mock(ListUtils.class);
         munger = new Munger(listUtils);
 
-        when(listUtils.shuffle(WORD_FRAGMENTATION, 1, 12)).thenReturn(WORD_FRAGMENTATION_SHUFFLED);
+        doReturn(WORD_FRAGMENTATION_SHUFFLED).when(listUtils).shuffle(WORD_FRAGMENTATION, 1, 12);
 
-        when(listUtils.shuffle(WORD_SOME, 1, 3)).thenReturn(WORD_SOME_SHUFFLED);
-        when(listUtils.shuffle(WORD_TEXT, 1, 3)).thenReturn(WORD_TEXT_SHUFFLED);
-        when(listUtils.shuffle(WORD_FOR, 1, 2)).thenReturn(WORD_FOR);
-        when(listUtils.shuffle(WORD_EXAMPLE, 1, 6)).thenReturn(WORD_EXAMPLE_SHUFFLED);
+        doReturn(WORD_SOME_SHUFFLED).when(listUtils).shuffle(WORD_SOME, 1, 3);
+        doReturn(WORD_TEXT_SHUFFLED).when(listUtils).shuffle(WORD_TEXT, 1, 3);
+        doReturn(WORD_FOR).when(listUtils).shuffle(WORD_FOR, 1, 2);
+        doReturn(WORD_EXAMPLE_SHUFFLED).when(listUtils).shuffle(WORD_EXAMPLE, 1, 6);
     }
 
     @Test

@@ -14,12 +14,12 @@ public class ArgParser {
     private Optional<Integer> lowerLimit;
     private Optional<Integer> upperLimit;
 
-    public ArgParser(ArgUtils argUtils, ConverterUtils converterUtils) {
+    ArgParser(ArgUtils argUtils, ConverterUtils converterUtils) {
         this.argUtils = argUtils;
         this.converterUtils = converterUtils;
     }
 
-    public boolean parseArgs(String... args) {
+    boolean parseArgs(String... args) {
         if (argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, args)) {
             Optional<String> lowerLimit = argUtils.getArgument(0, args);
             Optional<String> upperLimit = argUtils.getArgument(1, args);
@@ -36,11 +36,11 @@ public class ArgParser {
         return false;
     }
 
-    public Optional<Integer> getLowerLimit() {
+    Optional<Integer> getLowerLimit() {
         return this.lowerLimit;
     }
 
-    public Optional<Integer> getUpperLimit() {
+    Optional<Integer> getUpperLimit() {
         return this.upperLimit;
     }
 }

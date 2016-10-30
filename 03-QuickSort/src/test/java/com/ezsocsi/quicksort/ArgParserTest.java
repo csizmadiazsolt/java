@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Optional;
 
 import static org.junit.Assert.assertFalse;
@@ -36,7 +37,7 @@ public class ArgParserTest {
         when(argUtils.getArgument(0, ARGUMENTS_2)).thenReturn(Optional.of(ARGUMENTS_2[0]));
         when(argUtils.getArgument(0, ARGUMENTS_3)).thenReturn(Optional.of(ARGUMENTS_3[0]));
 
-        when(argUtils.splitArgToList(ARGUMENTS_2[0], "\\s+")).thenReturn(Arrays.asList(ARGUMENTS_2[0]));
+        when(argUtils.splitArgToList(ARGUMENTS_2[0], "\\s+")).thenReturn(Collections.singletonList(ARGUMENTS_2[0]));
         when(argUtils.splitArgToList(ARGUMENTS_3[0], "\\s+")).thenReturn(Arrays.asList(ARGUMENTS_3_LISTED));
 
         when(converterUtils.stringListToIntegerList(Arrays.asList(ARGUMENTS_3_LISTED)))
