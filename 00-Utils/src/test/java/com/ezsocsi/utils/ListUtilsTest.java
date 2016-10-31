@@ -20,11 +20,10 @@ public class ListUtilsTest {
     @Test
     public void verify_correct_shuffle_behaviour() {
         List<Character> inputWord = TestUtils.stringToCharList("bronx");
+        List<Character> shuffledWord = listUtils.shuffle(inputWord, 1, 3);
 
-        listUtils.shuffle(inputWord, 1, 3);
-
-        int letterCounter = inputWord.indexOf('b') + inputWord.indexOf('r')
-                + inputWord.indexOf('o') + inputWord.indexOf('n') + inputWord.indexOf('x');
+        int letterCounter = shuffledWord.indexOf('b') + shuffledWord.indexOf('r')
+                + shuffledWord.indexOf('o') + shuffledWord.indexOf('n') + shuffledWord.indexOf('x');
 
         assertEquals(10, letterCounter);
     }
@@ -34,9 +33,7 @@ public class ListUtilsTest {
         List<Integer> input = Arrays.asList(1, 2, 3);
         List<Integer> expected = Arrays.asList(3, 2, 1);
 
-        listUtils.swap(input, 0, 2);
-
-        assertEquals(expected, input);
+        assertEquals(expected, listUtils.swap(input, 0, 2));
     }
 
     @Test

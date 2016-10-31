@@ -3,11 +3,7 @@ package com.ezsocsi.fizzbuzz;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
-import com.ezsocsi.fizzbuzz.ArgParser;
-import com.ezsocsi.fizzbuzz.FizzBuzz;
-import com.ezsocsi.fizzbuzz.FizzBuzzGenerator;
 import com.ezsocsi.utils.ConsoleUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,13 +23,14 @@ public class FizzBuzzTest {
         fizzBuzzGenerator = mock(FizzBuzzGenerator.class);
         consoleUtils = mock(ConsoleUtils.class);
 
-        Optional<Integer> lowerLimit = Optional.of(4);
-        Optional<Integer> upperLimit = Optional.of(7);
+        Integer lowerLimit = 4;
+        Integer upperLimit = 7;
         List<String> generatedList = Arrays.asList("4", "Buzz", "Fizz", "7");
 
         when(argParser.getLowerLimit()).thenReturn(lowerLimit);
         when(argParser.getUpperLimit()).thenReturn(upperLimit);
-        when(fizzBuzzGenerator.generate(lowerLimit.get(), upperLimit.get())).thenReturn(generatedList);
+
+        when(fizzBuzzGenerator.generate(lowerLimit, upperLimit)).thenReturn(generatedList);
     }
 
     @Test

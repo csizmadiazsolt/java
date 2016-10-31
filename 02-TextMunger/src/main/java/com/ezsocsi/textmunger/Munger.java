@@ -26,8 +26,8 @@ class Munger {
         List<Character> wordAsCharSequence = word.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
 
         if (wordAsCharSequence.size() > 1) {
-            List<?> shuffledWordAsCharSequence = listUtils.shuffle(wordAsCharSequence, 1, wordAsCharSequence.size() - 1);
-            return shuffledWordAsCharSequence.stream().map(Object::toString).collect(Collectors.joining());
+            List<Character> shuffledWord = listUtils.shuffle(wordAsCharSequence, 1, wordAsCharSequence.size() - 1);
+            return shuffledWord.stream().map(Object::toString).collect(Collectors.joining());
         }
 
         return word;

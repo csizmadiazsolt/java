@@ -13,26 +13,29 @@ import static org.mockito.Mockito.*;
 
 public class QuickSortTest {
     private QuickSort quickSort;
-    private ListUtils listUtils;
 
     @Before
     public void setup() {
-        listUtils = mock(ListUtils.class);
+        ListUtils listUtils = mock(ListUtils.class);
         quickSort = new QuickSort(listUtils);
 
-        doCallRealMethod().when(listUtils).swap(anyList(), anyInt(), anyInt());
+        List<Integer> input1 = Arrays.asList(3, 6, 77, 2);
+        List<Integer> input2 = Arrays.asList(2, 6, 77, 3);
+        List<Integer> input3 = Arrays.asList(2, 3, 77, 6);
+        List<Integer> output = Arrays.asList(2, 3, 6, 77);
+
+        when(listUtils.swap(input1, 0, 3)).thenReturn(input2);
+        when(listUtils.swap(input2, 1, 3)).thenReturn(input3);
+        when(listUtils.swap(input3, 2, 3)).thenReturn(output);
     }
 
     @Test
     public void returns_correct_sorted_list() {
-        List<Integer> input = Arrays.asList(3, 6, 77, 2, 8);
-        List<Integer> expected = Arrays.asList(2, 3, 6, 8, 77);
+        List<Integer> input = Arrays.asList(3, 6, 77, 2);
+        List<Integer> expected = Arrays.asList(2, 3, 6, 77);
 
         List<Integer> sortedInput = quickSort.quickSort(input);
 
-        assertEquals(expected, input);
         assertEquals(expected, sortedInput);
-
-        verify(listUtils, times(6)).swap(anyList(), anyInt(), anyInt());
     }
 }
