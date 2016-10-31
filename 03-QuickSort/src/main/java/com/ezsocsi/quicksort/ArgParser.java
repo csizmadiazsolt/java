@@ -20,10 +20,10 @@ public class ArgParser {
 
     boolean parseArgs(String... args) {
         if (argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, args)) {
-            Optional<String> inputList = argUtils.getArgument(0, args);
+            Optional<String> inputListArg = argUtils.getArgument(0, args);
 
-            if (inputList.isPresent()) {
-                List<String> elements = argUtils.splitArgToList(inputList.get(), "\\s+");
+            if (inputListArg.isPresent()) {
+                List<String> elements = argUtils.splitArgToList(inputListArg.get(), "\\s+");
 
                 if (allElementsAreNumeric(elements)) {
                     this.inputList = converterUtils.stringListToIntegerList(elements);

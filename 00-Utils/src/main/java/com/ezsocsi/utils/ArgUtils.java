@@ -4,8 +4,11 @@ package com.ezsocsi.utils;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 public class ArgUtils {
+    private static final Logger LOGGER = Logger.getLogger(ArgUtils.class.getName());
+
     public boolean checkNumberOfArgs(int numberOfExpectedArgs, String... args) {
         return args.length == numberOfExpectedArgs;
     }
@@ -16,6 +19,7 @@ public class ArgUtils {
         try {
             argument = Optional.of(args[argumentNumber]);
         } catch (ArrayIndexOutOfBoundsException e) {
+            LOGGER.info("Exception:" + e);
             argument = Optional.empty();
         }
 

@@ -1,7 +1,6 @@
 package com.ezsocsi.fizzbuzz;
 
 
-import com.ezsocsi.fizzbuzz.ArgParser;
 import com.ezsocsi.utils.ArgUtils;
 import com.ezsocsi.utils.ConverterUtils;
 import org.junit.Before;
@@ -17,8 +16,6 @@ import static org.powermock.api.mockito.PowerMockito.when;
 
 public class ArgParserTest {
     private ArgParser argParser;
-    private ArgUtils argUtils;
-    private ConverterUtils converterUtils;
 
     private static final int NUMBER_OF_ARGS = 2;
     private final static String[] ARGUMENTS_1 = {"1", "2", "3"};
@@ -28,8 +25,8 @@ public class ArgParserTest {
 
     @Before
     public void setup() {
-        argUtils = mock(ArgUtils.class);
-        converterUtils = mock(ConverterUtils.class);
+        ArgUtils argUtils = mock(ArgUtils.class);
+        ConverterUtils converterUtils = mock(ConverterUtils.class);
         argParser = new ArgParser(argUtils, converterUtils);
 
         when(argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, ARGUMENTS_1)).thenReturn(false);
@@ -61,7 +58,11 @@ public class ArgParserTest {
     @Test
     public void returns_true_because_arguments_are_parsed_successfully() {
         assertTrue(argParser.parseArgs(ARGUMENTS_3));
-        assertEquals(Integer.valueOf(4), argParser.getLowerLimit().get());
-        assertEquals(Integer.valueOf(7), argParser.getUpperLimit().get());
+
+        Integer lowerLimit = argParser.getLowerLimit();
+        Integer upperLimit = argParser.getUpperLimit();
+
+        assertEquals(Integer.valueOf(4), lowerLimit);
+        assertEquals(Integer.valueOf(7), upperLimit);
     }
 }
