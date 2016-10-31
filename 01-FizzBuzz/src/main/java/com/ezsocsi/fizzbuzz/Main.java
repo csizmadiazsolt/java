@@ -6,11 +6,7 @@ import com.ezsocsi.utils.ConsoleUtils;
 import com.ezsocsi.utils.ConverterUtils;
 import com.ezsocsi.utils.ListUtils;
 
-public class Main {
-
-    private Main() {
-    }
-
+public class Main { // NOSONAR squid:S1118
     public static void main(String... args) {
         ArgUtils argUtils = new ArgUtils();
         ConverterUtils converterUtils = new ConverterUtils();

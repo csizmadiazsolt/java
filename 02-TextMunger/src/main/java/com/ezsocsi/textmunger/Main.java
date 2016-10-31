@@ -5,10 +5,7 @@ import com.ezsocsi.utils.ArgUtils;
 import com.ezsocsi.utils.ConsoleUtils;
 import com.ezsocsi.utils.ListUtils;
 
-public class Main {
-    private Main() {
-    }
-
+public class Main { // NOSONAR squid:S1118
     public static void main(String... args) {
         ListUtils listUtils = new ListUtils();
         Munger munger = new Munger(listUtils);
