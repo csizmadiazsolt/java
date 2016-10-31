@@ -9,7 +9,7 @@ public class Main {
     public static void main(String... args) {
         ListUtils listUtils = new ListUtils();
         Munger munger = new Munger(listUtils);
-        ConsoleUtils consoleUtils = new ConsoleUtils();
+        ConsoleUtils consoleUtils = new ConsoleUtils(listUtils);
         ArgUtils argUtils = new ArgUtils();
         ArgParser argParser = new ArgParser(argUtils);
         TextMunger textMunger = new TextMunger(munger, consoleUtils, argParser);

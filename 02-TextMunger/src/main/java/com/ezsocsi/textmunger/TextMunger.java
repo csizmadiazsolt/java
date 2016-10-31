@@ -3,18 +3,18 @@ package com.ezsocsi.textmunger;
 
 import com.ezsocsi.utils.ConsoleUtils;
 
-public class TextMunger {
+class TextMunger {
     private final Munger munger;
     private final ConsoleUtils consoleUtils;
     private final ArgParser argParser;
 
-    public TextMunger(Munger munger, ConsoleUtils consoleUtils, ArgParser argParser) {
+    TextMunger(Munger munger, ConsoleUtils consoleUtils, ArgParser argParser) {
         this.munger = munger;
         this.consoleUtils = consoleUtils;
         this.argParser = argParser;
     }
 
-    public void mungeText(String... args) {
+    void mungeText(String... args) {
         if (argParser.parseArgs(args)) {
             String textToMunge = argParser.getInputText();
 

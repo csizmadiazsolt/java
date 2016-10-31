@@ -1,6 +1,8 @@
 package com.ezsocsi.utils;
 
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 public class ArgUtils {
@@ -18,5 +20,9 @@ public class ArgUtils {
         }
 
         return argument;
+    }
+
+    public List<String> splitArgToList(String arg, String limiter) {
+        return Arrays.asList(arg.split(limiter));
     }
 }

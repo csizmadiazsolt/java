@@ -1,9 +1,6 @@
 package com.ezsocsi.textmunger;
 
 
-import com.ezsocsi.textmunger.ArgParser;
-import com.ezsocsi.textmunger.Munger;
-import com.ezsocsi.textmunger.TextMunger;
 import com.ezsocsi.utils.ConsoleUtils;
 import org.junit.Before;
 import org.junit.Test;

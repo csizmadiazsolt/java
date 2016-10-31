@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class FizzBuzzGenerator {
-    public List<String> generate(int lowerLimit, int upperLimit) {
+class FizzBuzzGenerator {
+    List<String> generate(int lowerLimit, int upperLimit) {
         List<String> fizzBuzzList = new ArrayList<>();
 
         IntStream.range(lowerLimit, upperLimit + 1)
-                .mapToObj(i -> getFizzBuzzValue(i))
-                .forEach(i -> fizzBuzzList.add(i.toString()));
+                .mapToObj(this::getFizzBuzzValue)
+                .forEach(fizzBuzzList::add);
 
         return fizzBuzzList;
     }
