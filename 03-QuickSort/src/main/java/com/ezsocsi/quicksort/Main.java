@@ -7,6 +7,9 @@ import com.ezsocsi.utils.ConverterUtils;
 import com.ezsocsi.utils.ListUtils;
 
 public class Main {
+    private Main() {
+    }
+
     public static void main(String... args) {
         ListUtils listUtils = new ListUtils();
         QuickSort quickSort = new QuickSort(listUtils);

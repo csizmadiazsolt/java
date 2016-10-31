@@ -1,7 +1,6 @@
 package com.ezsocsi.fizzbuzz;
 
 
-import com.ezsocsi.fizzbuzz.FizzBuzzGenerator;
 import org.junit.Test;
 
 import java.util.Arrays;

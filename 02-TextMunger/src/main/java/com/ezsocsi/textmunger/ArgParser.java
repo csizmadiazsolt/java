@@ -16,10 +16,10 @@ public class ArgParser {
 
     boolean parseArgs(String... args) {
         if (argUtils.checkNumberOfArgs(NUMBER_OF_ARGS, args)) {
-            Optional<String> inputText = argUtils.getArgument(0, args);
+            Optional<String> inputTextArg = argUtils.getArgument(0, args);
 
-            if (inputText.isPresent()) {
-                this.inputText = inputText.get();
+            if (inputTextArg.isPresent()) {
+                this.inputText = inputTextArg.get();
 
                 return true;
             }
