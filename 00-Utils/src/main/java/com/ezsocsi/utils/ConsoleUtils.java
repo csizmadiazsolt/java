@@ -19,11 +19,11 @@ public class ConsoleUtils {
     }
 
     void printList(List<String> list, String separator) {
-        System.out.print(listUtils.concatenateList(list, separator)); // NOSONAR squid:S106
+        print(listUtils.concatenateList(list, separator));
     }
 
     public void printlnList(List<?> list, String separator) {
-        System.out.println(listUtils.concatenateList(list, separator)); // NOSONAR squid:S106
+        println(listUtils.concatenateList(list, separator));
     }
 
     void printError(String errorMessage) {

@@ -4,6 +4,7 @@ package com.ezsocsi.utils;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ArgUtils {
@@ -19,7 +20,7 @@ public class ArgUtils {
         try {
             argument = Optional.of(args[argumentNumber]);
         } catch (ArrayIndexOutOfBoundsException e) {
-            LOGGER.info("Exception:" + e);
+            LOGGER.log(Level.WARNING, "Exception:" + e);
             argument = Optional.empty();
         }
 
