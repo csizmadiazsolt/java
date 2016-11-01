@@ -18,7 +18,7 @@ public class QuickSortIntegrationTest extends IntegrationTestUtils {
 
     @Test
     public void prints_error_when_multiple_arguments() {
-        Main.main("1", "2", "2");
+        Main.main("1", "2", "3");
 
         assertEquals("", stdout.toString());
         assertEquals("ERROR: unable to parse arguments, expected: \"<num> <num> <num> ...\"." + System.lineSeparator(),

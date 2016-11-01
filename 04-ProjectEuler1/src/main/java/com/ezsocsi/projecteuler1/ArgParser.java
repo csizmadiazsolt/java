@@ -26,8 +26,8 @@ public class ArgParser {
 
                 if (argMnt.isPresent()) {
                     this.input = argMnt.get();
+                    return true;
                 }
-                return true;
             }
         }
         return false;
