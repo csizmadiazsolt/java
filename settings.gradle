@@ -1,1 +1,1 @@
-include '00-Utils', '01-FizzBuzz', '02-TextMunger', '03-QuickSort'
+include '00-Utils', '01-FizzBuzz', '02-TextMunger', '03-QuickSort', '05-JavaCollections'
