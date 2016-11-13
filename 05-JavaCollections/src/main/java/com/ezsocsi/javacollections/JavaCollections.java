@@ -3,8 +3,6 @@ package com.ezsocsi.javacollections;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.OptionalDouble;
-import java.util.OptionalInt;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -26,31 +24,16 @@ class JavaCollections {
     }
 
     int findMax(List<Integer> numbers) {
-        OptionalInt max = numbers.stream().mapToInt(Integer::intValue).max();
-
-        if (max.isPresent()) {
-            return max.getAsInt();
-        }
-        return -1;
+        return numbers.stream().mapToInt(Integer::intValue).max().orElse(-1);
     }
 
     int findMaxInAListOfList(List<List<Integer>> numbers) {
-        OptionalInt max = numbers.stream().flatMap(List::stream).mapToInt(Integer::intValue).max();
-
-        if (max.isPresent()) {
-            return max.getAsInt();
-        }
-        return -1;
+        return numbers.stream().flatMap(List::stream).mapToInt(Integer::intValue).max().orElse(-1);
     }
 
     String findMaxFromStrings(List<String> numbers) {
-        OptionalInt max = numbers.stream().mapToInt(Integer::parseInt).max();
-
-        if (max.isPresent()) {
-            Integer maxValue = max.getAsInt();
-            return maxValue.toString();
-        }
-        return "Parse error.";
+        Integer max = numbers.stream().mapToInt(Integer::parseInt).max().orElse(-1);
+        return max.toString();
     }
 
     List<Integer> createIntegerList(int... numbers) {
@@ -62,13 +45,8 @@ class JavaCollections {
     }
 
     int averageOfIntegers(List<Integer> numbers) {
-        OptionalDouble average = numbers.stream().mapToInt(Integer::intValue).average();
-
-        if (average.isPresent()) {
-            Double averageValue = average.getAsDouble();
-            return averageValue.intValue();
-        }
-        return -1;
+        Double average = numbers.stream().mapToInt(Integer::intValue).average().orElse(-1);
+        return average.intValue();
     }
 
     List<Person> sortByAge(List<Person> persons) {
@@ -81,8 +59,13 @@ class JavaCollections {
     }
 
     List<Person> makePersonsYounger(List<Person> persons, int age) {
-        persons.forEach(person -> person.setAge(person.getAge() - age));
+        persons.stream().map(person -> setAge(person, age)).collect(Collectors.toList());
         return persons;
+    }
+
+    private Person setAge(Person person, int age) {
+        person.setAge(person.getAge() - age);
+        return person;
     }
 
     List<Person> findYoungerThan(List<Person> persons, int age) {

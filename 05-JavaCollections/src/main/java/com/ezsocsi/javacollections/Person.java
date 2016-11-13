@@ -33,8 +33,9 @@ class Person {
 
         Person person = (Person) o;
 
-        return name != null ? name.equals(person.name) : person.name == null && (age != null ? age.equals(person.age) : person.age == null);
+        return name != null && age != null && name.equals(person.name) && age.equals(person.age);
     }
+
 
     @Override
     public int hashCode() {
