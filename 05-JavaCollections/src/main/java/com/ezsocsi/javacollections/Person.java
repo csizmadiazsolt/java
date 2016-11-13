@@ -36,7 +36,6 @@ class Person {
         return name != null && age != null && name.equals(person.name) && age.equals(person.age);
     }
 
-
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
