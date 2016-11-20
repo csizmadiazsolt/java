@@ -1,0 +1,10 @@
+group 'com.ezsocsi.projecteuler1'
+version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': '04-ProjectEuler1'
+        attributes 'Main-Class': 'com.ezsocsi.projecteuler1.Main'
+    }
+    archiveName 'ProjectEuler1.jar'
+}

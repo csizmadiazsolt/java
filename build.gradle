@@ -33,3 +33,10 @@ project(':03-QuickSort') {
     testCompile project(':00-Utils').sourceSets.test.output
   }
 }
+
+project(':04-ProjectEuler1') {
+  dependencies {
+    compile project(':00-Utils')
+    testCompile project(':00-Utils').sourceSets.test.output
+  }
+}

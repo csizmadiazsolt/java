@@ -6,12 +6,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ListUtils {
-    public List<?> shuffle(List<?> list, int beginPosition, int endPosition) {
+
+    public List<Character> shuffle(List<Character> list, int beginPosition, int endPosition) {
         Collections.shuffle(list.subList(beginPosition, endPosition));
         return list;
     }
 
-    public List<?> swap(List<?> list, int i, int j) {
+    public List<Integer> swap(List<Integer> list, int i, int j) {
         Collections.swap(list, i, j);
         return list;
     }

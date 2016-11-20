@@ -1,4 +1,4 @@
-package com.ezsocsi.quicksort;
+package com.ezsocsi.projecteuler1;
 
 
 import com.ezsocsi.utils.ArgUtils;
@@ -6,8 +6,6 @@ import com.ezsocsi.utils.ConverterUtils;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Optional;
 
 import static org.junit.Assert.assertFalse;
@@ -15,15 +13,13 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-
 public class ArgParserTest {
     private ArgParser argParser;
 
     private static final int NUMBER_OF_ARGS = 1;
-    private final static String[] ARGUMENTS_1 = {"1", "2"};
+    private final static String[] ARGUMENTS_1 = {"1000", "10000"};
     private final static String[] ARGUMENTS_2 = {"Not numeric argument"};
-    private final static String[] ARGUMENTS_3 = {"12 67 54 3"};
-    private final static String[] ARGUMENTS_3_LISTED = {"12", "67", "54", "3"};
+    private final static String[] ARGUMENTS_3 = {"100"};
 
     @Before
     public void setup() {
@@ -38,17 +34,8 @@ public class ArgParserTest {
         when(argUtils.getArgument(0, ARGUMENTS_2)).thenReturn(Optional.of(ARGUMENTS_2[0]));
         when(argUtils.getArgument(0, ARGUMENTS_3)).thenReturn(Optional.of(ARGUMENTS_3[0]));
 
-        when(argUtils.splitArgToList(ARGUMENTS_2[0], "\\s+")).thenReturn(Collections.singletonList(ARGUMENTS_2[0]));
-        when(argUtils.splitArgToList(ARGUMENTS_3[0], "\\s+")).thenReturn(Arrays.asList(ARGUMENTS_3_LISTED));
-
-        when(converterUtils.stringListToIntegerList(Arrays.asList(ARGUMENTS_3_LISTED)))
-                .thenReturn(Arrays.asList(12, 67, 54, 3));
-
         when(converterUtils.stringToInteger(ARGUMENTS_2[0])).thenReturn(Optional.empty());
-        when(converterUtils.stringToInteger("12")).thenReturn(Optional.of(12));
-        when(converterUtils.stringToInteger("67")).thenReturn(Optional.of(67));
-        when(converterUtils.stringToInteger("54")).thenReturn(Optional.of(54));
-        when(converterUtils.stringToInteger("3")).thenReturn(Optional.of(3));
+        when(converterUtils.stringToInteger(ARGUMENTS_3[0])).thenReturn(Optional.of(12));
     }
 
     @Test
@@ -66,4 +53,3 @@ public class ArgParserTest {
         assertTrue(argParser.parseArgs(ARGUMENTS_3));
     }
 }
-
