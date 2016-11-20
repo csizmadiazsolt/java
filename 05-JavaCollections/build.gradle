@@ -1,0 +1,9 @@
+group 'com.ezsocsi.javacollections'
+version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': '05-JavaCollections'
+    }
+    archiveName 'JavaCollections.jar'
+}
