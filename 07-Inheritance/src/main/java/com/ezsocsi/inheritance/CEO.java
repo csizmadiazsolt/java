@@ -1,12 +1,13 @@
 package com.ezsocsi.inheritance;
 
 
-import java.util.List;
+class CEO extends Employee {
+    CEO(String name, Double salary) {
+        super(name, salary);
+    }
 
-public class CEO {
-    private List<Manager> managers;
-    
-    public String tellTheVision() {
-        return "tells the vision.";
+    @Override
+    public String doTheJob() {
+        return this.getName() + " tells the vision.";
     }
 }

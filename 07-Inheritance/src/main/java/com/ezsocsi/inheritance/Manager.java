@@ -1,7 +1,13 @@
 package com.ezsocsi.inheritance;
 
-/**
- * Created by ezsocsi on 11/13/2016.
- */
-public class Manager {
+
+class Manager extends Employee {
+    Manager(String name, Double salary) {
+        super(name, salary);
+    }
+
+    @Override
+    public String doTheJob() {
+        return this.getName() + " tells the direction.";
+    }
 }
