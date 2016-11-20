@@ -1,28 +1,35 @@
 package com.ezsocsi.inheritance;
 
 
-public class Employee {
+import java.util.ArrayList;
+import java.util.List;
+
+abstract class Employee {
     private String name;
     private Double salary;
+    private List<Employee> superiors;
 
-    public Employee(String name, Double salary) {
+    Employee(String name, Double salary) {
         this.name = name;
         this.salary = salary;
+        this.superiors = new ArrayList<>();
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Double getSalary() {
+    Double getSalary() {
         return salary;
     }
 
-    public void setSalary(Double salary) {
-        this.salary = salary;
+    void addSuperior(Employee superior) {
+        superiors.add(superior);
     }
+
+    List<Employee> getSuperiors() {
+        return this.superiors;
+    }
+
+    public abstract String doTheJob();
 }

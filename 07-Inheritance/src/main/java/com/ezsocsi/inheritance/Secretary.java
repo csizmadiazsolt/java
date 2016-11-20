@@ -1,7 +1,13 @@
 package com.ezsocsi.inheritance;
 
-/**
- * Created by ezsocsi on 11/13/2016.
- */
-public class Secretary {
+
+class Secretary extends Employee {
+    Secretary(String name, Double salary) {
+        super(name, salary);
+    }
+
+    @Override
+    public String doTheJob() {
+        return this.getName() + " orders stuff.";
+    }
 }
