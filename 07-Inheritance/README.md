@@ -1,4 +1,4 @@
-# 04-ProjectEuler1
+# 07-Inheritance
 
 ## Usage
 ```
