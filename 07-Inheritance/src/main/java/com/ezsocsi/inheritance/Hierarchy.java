@@ -3,6 +3,7 @@ package com.ezsocsi.inheritance;
 
 import com.ezsocsi.utils.RandomUtils;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 class Hierarchy {
@@ -34,15 +35,19 @@ class Hierarchy {
     }
 
     private void setDeveloperSuperiors() {
-        organization.getJavaDevelopers().get(0).addSuperior(organization.getCeo());
-        organization.getCppDevelopers().get(0).addSuperior(organization.getCeo());
+        setCEOAsDeveloperSuperior(organization.getJavaDevelopers().get(0));
+        setCEOAsDeveloperSuperior(organization.getCppDevelopers().get(0));
+        setManagerAsDeveloperSuperior(organization.getJavaDevelopers());
+        setManagerAsDeveloperSuperior(organization.getCppDevelopers());
+    }
 
-        IntStream.range(1, organization.getJavaDevelopers().size())
-                .forEach(j -> organization.getJavaDevelopers().get(j)
-                        .addSuperior(organization.getManagers()
-                                .get(randomUtils.generateRandomInRange(0, organization.getManagers().size() - 1))));
-        IntStream.range(1, organization.getCppDevelopers().size())
-                .forEach(c -> organization.getCppDevelopers().get(c)
+    private void setCEOAsDeveloperSuperior(Employee employee) {
+        employee.addSuperior(organization.getCeo());
+    }
+
+    private void setManagerAsDeveloperSuperior(List<Employee> employees) {
+        IntStream.range(1, employees.size())
+                .forEach(j -> employees.get(j)
                         .addSuperior(organization.getManagers()
                                 .get(randomUtils.generateRandomInRange(0, organization.getManagers().size() - 1))));
     }

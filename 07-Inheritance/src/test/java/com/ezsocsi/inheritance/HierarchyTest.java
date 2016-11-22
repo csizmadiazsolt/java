@@ -51,8 +51,8 @@ public class HierarchyTest {
 
         verify(organization, times(4)).getCeo();
         verify(organization, times(4)).getSecretaries();
-        verify(organization, times(3)).getJavaDevelopers();
-        verify(organization, times(3)).getCppDevelopers();
+        verify(organization, times(2)).getJavaDevelopers();
+        verify(organization, times(2)).getCppDevelopers();
         verify(organization, times(6)).getManagers();
         verify(randomUtils, times(4)).generateRandomInRange(0, 0);
     }
