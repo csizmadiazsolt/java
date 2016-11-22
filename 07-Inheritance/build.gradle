@@ -1,0 +1,10 @@
+group 'com.ezsocsi.inheritance'
+version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': '07-Inheritance'
+        attributes 'Main-Class': 'com.ezsocsi.inheritance.Main'
+    }
+    archiveName 'Inheritance.jar'
+}
