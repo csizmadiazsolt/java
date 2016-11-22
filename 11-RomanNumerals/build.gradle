@@ -1,0 +1,10 @@
+group 'com.ezsocsi.romannumerals'
+version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': '11-RomanNumerals'
+        attributes 'Main-Class': 'com.ezsocsi.romannumerals.Main'
+    }
+    archiveName 'RomanNumerals.jar'
+}

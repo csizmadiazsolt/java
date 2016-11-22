@@ -30,10 +30,10 @@ project(':02-TextMunger') {
 }
 
 project(':03-QuickSort') {
-  dependencies {
-    compile project(':00-Utils')
-    testCompile project(':00-Utils').sourceSets.test.output
-  }
+    dependencies {
+        compile project(':00-Utils')
+        testCompile project(':00-Utils').sourceSets.test.output
+    }
 }
 
 project(':04-ProjectEuler1') {
@@ -51,6 +51,13 @@ project(':07-Inheritance') {
 }
 
 project(':09-DIGuice') {
+    dependencies {
+        compile project(':00-Utils')
+        testCompile project(':00-Utils').sourceSets.test.output
+    }
+}
+
+project(':11-RomanNumerals') {
     dependencies {
         compile project(':00-Utils')
         testCompile project(':00-Utils').sourceSets.test.output
