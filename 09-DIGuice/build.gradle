@@ -1,0 +1,10 @@
+group 'com.ezsocsi.diguice'
+version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': '09-DIGuice'
+        attributes 'Main-Class': 'com.ezsocsi.diguice.Main'
+    }
+    archiveName 'DIGuice.jar'
+}

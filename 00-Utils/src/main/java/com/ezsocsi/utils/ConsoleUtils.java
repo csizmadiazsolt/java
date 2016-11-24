@@ -1,11 +1,14 @@
 package com.ezsocsi.utils;
 
 
+import com.google.inject.Inject;
+
 import java.util.List;
 
 public class ConsoleUtils {
-    private ListUtils listUtils = new ListUtils();
+    private ListUtils listUtils;
 
+    @Inject
     public ConsoleUtils(ListUtils listUtils) {
         this.listUtils = listUtils;
     }

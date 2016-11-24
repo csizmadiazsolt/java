@@ -1,1 +1,10 @@
-include '00-Utils', '01-FizzBuzz', '02-TextMunger', '03-QuickSort', '04-ProjectEuler1', '05-JavaCollections', '07-Inheritance', '08-DependencyInjection'
+include '00-Utils'
+include '01-FizzBuzz'
+include '02-TextMunger'
+include '03-QuickSort'
+include '04-ProjectEuler1'
+include '05-JavaCollections'
+include '07-Inheritance'
+include '08-DependencyInjection'
+include '09-DIGuice'
+
